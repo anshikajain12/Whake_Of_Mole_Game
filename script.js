@@ -11,34 +11,59 @@ var chance = document.querySelector("#headinggame");
 var timing = document.querySelectorAll(".time");
 var boxwatch = document.querySelector(".box");
 
-//start button function
+
+var backbutton= document.querySelector(".bt1");
+var nextbutton = document.querySelector(".bt2");
+
+
+
+// function openwindow(){
+//   var url="../Game/instruction.html";
+//   var windowsize="height=500, width=500";
+//   var newWindow = window.open(url,"Instruction Page",windowsize);
+//   newWindow.moveTo(400,100);
+// }
+
+// //instruction page button function
+// setTimeout(() => {
+//   openwindow();
+// }, 2000);
+
+
+
+
+//start button
 function start() {
   var audio = new Audio("./audio/JKL83NH-video-game-win.mp3");
   audio.play();
+  document.body.style.background='url("./Assests/bac.jpg")';
+  document.body.style.backgroundRepeat="no-repeat";
+  document.body.style.backgroundSize="cover";
+  document.body.style.backgroundPosition="inherit";
   h1.style.visibility = "hidden";
   mainMole.style.visibility = "hidden";
   mainMud.style.visibility = "hidden";
   startButton.style.visibility = "hidden";
-
+  
   for (let i = 0; i < timing.length; i++) {
     timing[i].style.visibility = "visible";
   }
   boxwatch.style.visibility = "visible";
-
+  
   for (let i = 0; i < points.length; i++) {
     points[i].style.visibility = "visible";
   }
-
+  
   for (let i = 0; i < dirts.length; i++) {
     dirts[i].style.visibility = "visible";
   }
-
+  
   let timerIds = setInterval(() => {
     var i = randomIntFromInterval(1, 6);
     document.getElementById("mole" + i).style.visibility = "visible";
-
+    
     document.getElementById("mole" + i).onmouseover = increamentbutton;
-
+    
     //timer function
     document.getElementById("sec").innerText = timer--;
     if (timer < 1) {
@@ -60,7 +85,7 @@ function start() {
     for (let i = 0; i < moles.length; i++) {
       moles[i].style.visibility = "hidden";
     }
-
+    
     for (let i = 0; i < dirts.length; i++) {
       dirts[i].style.visibility = "hidden";
     }
